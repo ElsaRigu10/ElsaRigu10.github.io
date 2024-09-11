@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AguaHBEOControl</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f7f5ea;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #599098;
+        color: #f4f0f0;
+        padding: 10px 20px;
+      }
+
+      .logo-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-title img {
+        max-width: 50px;
+        height: auto;
+      }
+
+      .menu {
+        display: flex;
+        gap: 20px;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .menu a:hover {
+        background-color: #dce9ea;
+      }
+
+      #header-image {
+        background-image: url('portada.png');
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        text-shadow: 1px 1px #000000;
+      }
+
+      .container {
+        padding: 50px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin: 50px;
+      }
+
+      .container2 {
+        display: flex;
+        align-items: center;
+        padding: 50px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin: 0px;
+      }
+
+      .text-content {
+        flex: 1;
+      }
+
+      .image-content {
+        flex: -1;
+        text-align: right;
+        margin-left: 20px;
+      }
+
+      .image-content img {
+        max-width: 200px;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      p {
+        color: #333;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .testimonial-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f8f0;
+        padding: 50px;
+      }
+
+      .testimonial-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .testimonial-image img {
+        max-width: 500px;
+        height: 350px;
+        border-radius: 8px;
+      }
+
+      .testimonial-box {
+        flex: 2;
+        padding: 30px;
+        background-color: white;
+        border: 2px solid #91bbc1;
+        border-radius: 8px;
+        max-width: 600px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-quote {
+        font-size: 20px;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      .testimonial-location {
+        font-size: 16px;
+        color: #777;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .image-content {
+          margin-top: 20px;
+          text-align: center;
+        }
+        .text-content {
+          padding-right: 0;
+        }
+
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .logo-title {
+          justify-content: center;
+        }
+
+        .menu {
+          margin-top: 20px;
+        }
+
+        .testimonial-container {
+          flex-direction: column;
+        }
+
+        .testimonial-image {
+          margin-bottom: 20px;
+        }
+      }
+
+      h2 {
+        color: #599098;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .services-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        border: 1px solid #c9cffa;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #f3f4fd;
+        box-sizing: border-box;
+      }
+
+      .service img {
+        max-width: 250px;
+        margin-bottom: 20px;
+      }
+
+      .service-content {
+        text-align: center;
+      }
+
+      .service h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .service p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .service a {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #2ca9a7;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .service a:hover {
+        background-color: #cedceb;
+      }
+
+      @media screen and (max-width: 768px) {
+        .service {
+          width: 100%;
+        }
+
+        .service img {
+          max-width: 200px;
+        }
+      }
+
+      footer {
+            background-color: #599098;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: auto;
+        }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-title">
+        <img src="Logo.png" alt="Logo de AguaHBEOControl" />
+        <h1>AguaHBEOControl</h1>
+      </div>
+      <div class="menu">
+        <a href="https://www.instagram.com/ed_chavezcr/?fbclid=IwY2xjawFN3WcBHWkRwVKdofUPejf7N1NpR9_O9enP3BCDVx8MCxkWQy8rUoU_uguzlhYM2w">Contacto</a>
+        <a href="Sistema.html">Sistema</a>
+      </div>
+    </header><br>
+
+    <div id="header-image">
+      <h1>"Salvar el suministro de agua de México"</h1>
+    </div>
+
+    <div class="container2">
+      <div class="text-content">
+        <h2>AguaHBEOControl</h2>
+        <p>
+          Es una empresa Mexicana, especializada en la gestión del consumo de agua.<br />
+          Ofrece soluciones personalizadas para ayudar a los clientes a reducir<br /> el consumo de agua,
+          ahorrar dinero y proteger el medio ambiente.
+        </p>
+      </div>
+      <div class="image-content">
+        <img src="Logo.png" alt="Imagen de AguaHBEOControl" />
+      </div>
+    </div>
+
+    <div class="testimonial-container">
+      <div class="testimonial-image">
+        <img src="imagen.png" alt="Imagen de Testimonio" />
+      </div>
+      <div class="testimonial-box">
+        <p class="testimonial-quote">
+          "AguaHBEOControl es la mejor opción para la gestión del consumo de agua en México.
+          Nuestro consumo de agua ha disminuido drásticamente desde que comenzamos a trabajar con ellos,
+          y su servicio al cliente es de primera categoría. ¡Altamente recomendado!"
+        </p>
+        <p class="testimonial-author">Jorge López</p>
+        <p class="testimonial-location">Ciudad de México</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Servicios</h2>
+
+      <div class="services-container">
+        <div class="service">
+          <img src="servicio 1.png" alt="Recogida y análisis de datos">
+          <div class="service-content">
+            <h2>Recogida y análisis de datos</h2>
+            <p>
+              Este servicio recopila datos de medidores de agua y otras fuentes, y luego brinda información sobre tendencias y consumo de agua.
+            </p>
+            <!-- <a href="#">Más información</a> -->
+          </div>
+        </div>
+
+        <div class="service">
+          <img src="servicio2.png" alt="Gestión de recursos hídricos">
+          <div class="service-content">
+            <h2>Gestión de recursos hídricos</h2>
+            <p>
+              Implementamos estrategias para la administración eficiente de los recursos hídricos, maximizando su uso y minimizando el desperdicio.
+            </p>
+            <!-- <a href="#">Más información</a> -->
+          </div>
+        </div>
+
+        <div class="service">
+          <img src="servicio3.png" alt="Consultoría y soporte técnico">
+          <div class="service-content">
+            <h2>Consultoría y soporte técnico</h2>
+            <p>
+              Ofrecemos asesoramiento experto y soporte técnico para resolver cualquier problema relacionado con el consumo de agua.
+            </p>
+            <!-- <a href="#">Más información</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+<footer>
+        <p>&copy; 2024 AguaHBEOControl. Todos los derechos reservados.</p>
+    </footer>
+      </body>
+</html>
+

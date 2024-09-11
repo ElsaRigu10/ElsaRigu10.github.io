@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Monitoreo de Flujo y Nivel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fefefe; 
+            color: #555; 
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #599098;
+            color: #f4f0f0;
+            padding: 10px 20px;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-title img {
+            max-width: 50px;
+            height: auto;
+        }
+        h2 {
+            font-size: 3em;
+            margin-bottom: 0px;
+            color: #e9f0f1; /* Azul más oscuro */
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            flex: 1;
+        }
+        .box {
+            background-color: #ffffff; /* Fondo blanco */
+            border: 2px solid #dbeff8; /* Azul muy claro */
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #599098; /* Azul medio */
+        }
+        .data-box {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #599098; /* Azul medio */
+        }
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            background-color: #f5f5f5; /* Gris claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0277bd; /* Azul medio */
+            overflow: hidden; /* Oculta cualquier desbordamiento */
+        }
+        .chart-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ajusta la imagen sin deformarla */
+        }
+        table {
+            width: 80%; /* Ajusta el ancho de la tabla */
+            margin: 20px auto; /* Centra la tabla */
+            border-collapse: collapse;
+            background-color: #ffffff; /* Fondo blanco */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            border-radius: 8px;
+        }
+        table thead th {
+            background-color: #599098; /* Azul oscuro */
+            color: white;
+            padding: 8px;
+            font-size: 1em;
+            text-align: center;
+        }
+        table tbody tr:nth-child(even) {
+            background-color: #f5f5f5; /* Gris claro */
+        }
+        table tbody tr:nth-child(odd) {
+            background-color: #ffffff; /* Fondo blanco */
+        }
+        table th, table td {
+            border: 1px solid #b2ede9; /* Gris muy claro */
+            padding: 6px;
+            text-align: center;
+        }
+        table td {
+            color: #000000; /* Color de texto */
+        }
+        .history-title {
+            font-size: 2em;
+            color: #599098; /* Azul medio */
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #599098;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="Logo.png" alt="Logo de AguaHBEOControl" />
+            <h1>AguaHBEOControl</h1>
+        </div>
+    </header><br>
+
+    <div class="history-title">Sistema de Monitoreo de Flujo y Nivel</div>
+
+    <div class="container">
+        <div class="box">
+            <div class="title">CAUDAL</div>
+            <div class="chart-container"><img src="Imagen1.png" alt="Gráfico Caudal"></div>
+        </div>
+        <div class="box">
+            <div class="title">CONSUMO</div>
+            <div class="data-box">64.582 L</div>
+            <div class="chart-container"><img src="Imagen2.png" alt="Gráfico Consumo"></div>
+        </div>
+        <div class="box">
+            <div class="title">NIVEL</div>
+            <div class="data-box">16%</div>
+            <div class="chart-container"><img src="Imagen3.png" alt="Gráfico Nivel"></div>
+        </div>
+    </div>
+
+    <div class="history-title">Historial del Tiempo</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>TIEMPO</th>
+                <th>CAUDAL</th>
+                <th>CONSUMO</th>
+                <th>NIVEL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>19:13.0</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:14.0</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:15.0</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:16.0</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:17.0</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:18.0</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:19.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:20.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:21.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:22.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:23.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:24.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:25.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:26.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+            <tr>
+                <td>19:27.1</td>
+                <td>0</td>
+                <td>64.582</td>
+                <td>16%</td>
+            </tr>
+        </tbody>
+    </table>
+<br>
+    <footer>
+        <p>&copy; 2024 AguaHBEOControl. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
